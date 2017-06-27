@@ -3,7 +3,9 @@ var myapp;
     var Controllers;
     (function (Controllers) {
         var HomeController = (function () {
-            function HomeController() {
+            function HomeController(movieService) {
+                this.movieService = movieService;
+                this.movies = movieService.getMovies();
             }
             return HomeController;
         }());
@@ -19,8 +21,15 @@ var myapp;
         }());
         Controllers.AddMovieController = AddMovieController;
         var EditMovieController = (function () {
-            function EditMovieController() {
+            function EditMovieController($stateParams, movieService) {
+                this.$stateParams = $stateParams;
+                this.movieService = movieService;
+                this.id = $stateParams['id'];
             }
+            EditMovieController.prototype.editMovie = function () {
+                this.movie._id = this.id;
+                this.movieService.saveMovie(this.movie);
+            };
             return EditMovieController;
         }());
         Controllers.EditMovieController = EditMovieController;

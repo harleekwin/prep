@@ -11,4 +11,9 @@ router.post('/', function (req, res) {
         res.end();
     });
 });
+router.get('/', function (req, res) {
+    db_1.default.db.collection('movies').find().toArray(function (movies) {
+        res.json(movies);
+    });
+});
 exports.default = router;

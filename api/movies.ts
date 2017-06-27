@@ -11,4 +11,10 @@ router.post('/', (req, res) => {
   })
 })
 
+router.get('/', (req, res) => {
+  database.db.collection('movies').find().toArray((movies) => {
+    res.json(movies);
+  })
+})
+
 export default router;

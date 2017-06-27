@@ -10,6 +10,9 @@ var myapp;
             MovieService.prototype.saveMovie = function (movie) {
                 this.MovieResource.save(movie);
             };
+            MovieService.prototype.getMovies = function () {
+                return this.MovieResource.query();
+            };
             return MovieService;
         }());
         Services.MovieService = MovieService;

@@ -1,3 +1,7 @@
 <h2>Home</h2>
 
 <a href="/add">Add Movie</a>
+
+<ul>
+  <li ng-repeat="m in vm.movies">{{m.title}} <a href=" /edit/{{m._id}}">Edit</a></li>
+</ul>

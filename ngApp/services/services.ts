@@ -6,6 +6,10 @@ namespace myapp.Services {
       this.MovieResource.save(movie);
     }
 
+    public getMovies() {
+      return this.MovieResource.query();
+    }
+
     public constructor(
       public $resource
     ) {

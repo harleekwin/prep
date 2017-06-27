@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var connectionString = 'mongodb://webuser:P@ssw0rd1@ds064299.mlab.com:64299/mwhitedb2017';
+var connectionString = 'mongodb://mwhite:blue2@ds064299.mlab.com:64299/mwhitedb2017';
 var mongodb = require("mongodb");
 var Database = (function () {
     function Database() {
